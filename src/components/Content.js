@@ -96,6 +96,7 @@ export default class Content extends React.Component{
                         config={this.state.popupConfig}
                     >
                     </Popup>
+                    <div>Passe o mouse em cima dos regsitros para editar.</div><br></br>
                     <Table 
                         editClick={data => this.editClick(data)}
                         deleteClick={id => this.deleteClick(id)}
