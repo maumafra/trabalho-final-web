@@ -67,7 +67,7 @@ li:hover {
 }
 
 .content{
-  position: relative;
+  position: static;
   z-index: -1;
   margin-left: 10%;
   margin-right: 10%;
@@ -79,14 +79,14 @@ li:hover {
 .table{
   border-collapse: collapse;
   width: 70%;
-  margin-left: 14.5%;
+  margin-left: 18%;
 }
 
-table tr:nth-child(odd){
-  background-color: #dcffec;
+table tr:not(.selected):nth-child(odd){
+  background-color: #e7fff2;
 }
 
-table tr:nth-child(even){
+table tr:not(.selected):nth-child(even){
   background-color: aliceblue;
 }
 
@@ -94,6 +94,7 @@ th , td{
   border: 2px solid #272727;
   padding: 5px;
   width: 20%;
+  height: 30px;
 }
 
 td{
@@ -105,6 +106,103 @@ th{
   padding: 10px;
   background-color: #0c5c27;
   color: aliceblue;
+}
+
+.selected{
+  background-color: rgba(150, 212, 212, 0.4)
+}
+
+.tableButtons-invisible{
+  border: transparent;
+  visibility: hidden;
+}
+
+.tableButtons-visible{
+  background-color: #d7dbcd;
+  border: transparent;
+  visibility: visible;
+  color: #0c4124;
+}
+
+.tableButtons-visible:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.editor{
+  display: grid;
+  margin: 20px;
+  border: 1px solid #272727;
+  width: fit-content;
+  text-align: left;
+  padding: 10px;
+  margin-left: 38%;
+}
+
+.saveButton{
+  background-color: #0c5c27;
+  font-weight: bold;
+  border: #272727 2px solid;
+  color: aliceblue;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.saveButton:hover{
+  background-color: #138a3a;
+}
+
+.cancelButton{
+  font-size: 14px;
+  cursor: pointer;
+  border: #272727 2px solid;
+}
+
+input{
+  margin: 5px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(138, 138, 138, 0.4);
+}
+
+.popup-inner-success{
+  position: relative;
+  padding: 32px;
+  width: 100%;
+  max-width: 640px;
+  background-color: #fff;
+  border-top: #17ac49 20px solid;
+}
+
+.popup-inner-error{
+  position: relative;
+  padding: 32px;
+  width: 100%;
+  max-width: 640px;
+  background-color: #fff;
+  border-top: #ac1717 20px solid;
+}
+
+.close-popup{
+  position: absolute;
+  top:16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+.close-popup:hover{
+  text-shadow : 1px 1px 10px rgb(49, 255, 135), 1px 1px 10px #ccc;
 }
 
 .background-img{
